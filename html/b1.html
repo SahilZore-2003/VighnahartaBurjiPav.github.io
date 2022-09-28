@@ -43,10 +43,14 @@
         
     <!-- forms ends  -->
     <script>
-        setTimeout(function myfun(){
-            let orderid = Math.floor(Math.random() * 999);
-        document.getElementById('orderid').innerHTML = orderid;
-        },5000);
+          function myfun(){
+           
+            setTimeout(function number(){
+                let orderid = Math.floor(Math.random() * 999);
+                document.getElementById('orderid').innerHTML = orderid;
+            },5000);
+        }
+        number();
         
         
     </script>
