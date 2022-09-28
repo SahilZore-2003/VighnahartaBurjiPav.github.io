@@ -31,8 +31,10 @@
     <!-- form starts  -->
     <div class="container">
         <form action="#" method="post" name="vighnaharta">
+            <input type="number" id="order">
             <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Anda Boil Single" name="item">
             <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter Quntity" name="quntity">
+            
             <input type="submit" class="btn btn-dark btn-lg btn-block" onclick="myfun()">
         </form>
     </div>
@@ -48,6 +50,7 @@
             setTimeout(function number(){
                 let orderid = Math.floor(Math.random() * 999);
                 document.getElementById('orderid').innerHTML = orderid;
+                document.getElementById('order').value = orderid;
             },5000);
         }
         number();
