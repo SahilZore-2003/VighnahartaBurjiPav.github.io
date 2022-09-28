@@ -11,8 +11,13 @@
     <title>Buy page</title>
   </head>
   <body>
+
+
+   
+
+
     <!-- navbar start  -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Vighnaharta Anda Burji <br> & Sea Food</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -31,30 +36,46 @@
     <!-- form starts  -->
     <div class="container">
         <form action="#" method="post" name="vighnaharta">
-            <input type="number" id="order">
+            <input type="number" id="order" name="orderid">
             <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Anda Boil Single" name="item">
             <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter Quntity" name="quntity">
             
-            <input type="submit" class="btn btn-dark btn-lg btn-block" onclick="myfun()">
+            <input type="submit" class="btn btn-dark btn-lg btn-block" onclick="myfun()" value="submit" name="submit">
         </form>
+    </div >
+    <div id="block">
+      <h2 style="text-align: center; color:black;">Your Order ID</h2>
+      <div id="orderid" style="text-align: center; color:black; font-size: 40px; font-weight: bold;">
     </div>
-     <h2 style="text-align: center; color:black;">Your Order ID</h2>
-     <div id="orderid">
+    
          
      </div>
         
     <!-- forms ends  -->
     <script>
           function myfun(){
-           
-            setTimeout(function number(){
-                let orderid = Math.floor(Math.random() * 999);
+              document.getElementById('block').style.display = "block";
+             
+                function number(){
+                    let orderid = Math.floor(Math.random() * 999);
                 document.getElementById('orderid').innerHTML = orderid;
                 document.getElementById('order').value = orderid;
-            },5000);
+                
+                }
+           number();
+           
+                
         }
-        number();
-        
+          
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx3RyEz_-BW8ycCavBatTaubAk3Gp4Rn-LZpP3dec-4lDW81op6sWY9Neqj075EVoo/exec'
+            const form = document.forms['vighnaharta']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Ordering food..! We Will Serve You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
         
     </script>
 

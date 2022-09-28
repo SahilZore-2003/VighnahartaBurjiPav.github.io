@@ -4,3 +4,13 @@
     font-weight: bold;
     color: black;
 }
+form input{
+    margin: 10px 0;
+   }
+   
+  #order{
+    display: none;
+  }
+  #block{
+    display: none;
+  }
