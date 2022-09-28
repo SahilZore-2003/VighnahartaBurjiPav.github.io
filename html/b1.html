@@ -40,7 +40,7 @@
             <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Anda Boil Single" name="item">
             <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter Quntity" name="quntity">
             
-            <input type="submit" class="btn btn-dark btn-lg btn-block" onclick="myfun()" value="submit" name="submit">
+            <input type="submit" class="btn btn-dark btn-lg btn-block" onclick="myfun()" value="submit" name="submit" id="btnclick">
         </form>
     </div >
     <div id="block">
@@ -54,6 +54,7 @@
     <!-- forms ends  -->
     <script>
           function myfun(){
+            document.getElementById('btnclick').style.background = "green";
             setTimeout(function(){
               document.getElementById('block').style.display = "block";
             },5000);
